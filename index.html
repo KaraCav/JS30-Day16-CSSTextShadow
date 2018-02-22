@@ -54,15 +54,18 @@
             const yWalk = Math.round((y / height * walk) - (walk / 2));
             text.style.textShadow = `${xWalk}px ${yWalk * -1}px 2px #f575aa, 
             ${xWalk * -1}px ${yWalk}px 2px #1eadf0`;
+            if (y <= 430) {
+                e.target.firstElementChild.style.fontSize = `${(50 * (y / 100))}px`;
+            }
+            if (y > 430) {
+                text.style.textShadow = `${xWalk}px ${yWalk * -1}px 2px #f575aa, 
+            ${xWalk * -1}px ${yWalk}px 2px #1eadf0, ${xWalk * -1.5}px ${yWalk * -1.5}px 2px #f7ed95,${xWalk * 1.5}px ${yWalk * 1.5}px 2px #9cf781`;
+
+            }
         }
 
         hero.addEventListener('mousemove', shadow);
     </script>
-    <style>
-        h2 {
-            font: #f575aa
-        }
-    </style>
 
 </body>
 
